@@ -4,22 +4,20 @@ In the talk I gave the same request to two agent sessions and compared what they
 
 ## What you need
 
-- A coding agent (see the [README](../README.md)), with this kit's folder open as the project.
+- A coding agent (see the [README](../README.md)).
 - R with the tidyverse packages. If you do not have R, see [Without R](#without-r) below.
 - The data: run `data/fetch-bold.sh`, or ask your agent to run it ([Getting the data](../README.md#getting-the-data)).
-- The source code of the BIOSCAN Browser, in a folder called `bioscan-browser/` inside the kit's folder. It is public on GitHub under the MIT licence. Ask your agent:
+- A separate folder to work in, outside the kit's folder. The kit holds this exercise, its answers and the skill, and an agent that looks around its folder will find and read them, which spoils the comparison. Make a folder called `ibol-demo` next to the kit's folder (not inside it), with only two things in it: the data file, in `ibol-demo/data/`, and the source code of the BIOSCAN Browser, in `ibol-demo/bioscan-browser/`. The Browser's code is public on GitHub under the MIT licence. In a session in the kit's folder, ask your agent:
 
   ```text
-  Make a shallow clone of https://github.com/bioscan-ml/bioscan-browser into a folder called bioscan-browser in this folder.
+  Make a folder called ibol-demo next to this folder. Copy data/bold-thailand-coleoptera.tsv into ibol-demo/data/, and make a shallow clone of https://github.com/bioscan-ml/bioscan-browser into ibol-demo/bioscan-browser. Copy nothing else.
   ```
 
-  If you do not have `git`, download the ZIP file from that page (Code, then Download ZIP), unzip it into the kit's folder and rename the folder to `bioscan-browser`.
+  Claude Code asks your permission before it writes outside the folder it started in; allow it. If you do not have `git`, download the ZIP file from that page (Code, then Download ZIP), unzip it into `ibol-demo` and rename the folder to `bioscan-browser`.
 
 ## Step 1: The same request, twice
 
-First, move the `skills` folder out of the kit's folder (to your desktop, say). It holds the rules for this task, and an agent that looks around the folder will find and read it, which spoils the comparison. You bring it back in Step 2.
-
-Start a new session and paste this request exactly. It is the request from the talk; only the location of the data file has changed.
+Open `ibol-demo` as the project, not the kit's folder. Start a new session there and paste this request exactly. It is the request from the talk; only the location of the data file has changed.
 
 ```text
 This folder has a file of public BOLD records for beetles (Coleoptera) collected in Thailand, data/bold-thailand-coleoptera.tsv. Using R and the tidyverse, tell me how many specimens there are, how many BINs, the five families with the most BINs, and how many specimens lack a genus or a species identification. The source code of the BIOSCAN Browser is in bioscan-browser/. For three specimens without a genus identification, give a link to each record's page in the Browser.
@@ -45,10 +43,10 @@ When I rehearsed this on 2026-10-28, the routes varied from 4 to 14 steps, and 2
 
 ## Step 2: Add the skill
 
-Move the `skills` folder back into the kit's folder. The file [skills/bold-summary/SKILL.md](../skills/bold-summary/SKILL.md) holds six rules for this kind of task. Read it first; it takes a minute. Then ask your agent to set it up:
+The file [skills/bold-summary/SKILL.md](../skills/bold-summary/SKILL.md) in the kit holds six rules for this kind of task. Read it first; it takes a minute. Then copy the kit's `skills/bold-summary` folder into `ibol-demo`, and in a session in `ibol-demo` ask your agent to set it up:
 
 ```text
-Read skills/bold-summary/SKILL.md and set it up as a skill for this project.
+Read bold-summary/SKILL.md and set it up as a skill for this project.
 ```
 
 Claude Code will put it in `.claude/skills/bold-summary/`; Codex and Antigravity in `.agents/skills/bold-summary/`. Claude Code asks your permission before writing there; allow it. An agent reads the list of skills when a session starts, so start a new session, delete the files the earlier runs added, and paste the same request again.
