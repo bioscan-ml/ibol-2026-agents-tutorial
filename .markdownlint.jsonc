@@ -1,0 +1,4 @@
+// Prose is soft-wrapped, so no line-length limit.
+{
+  "MD013": false
+}

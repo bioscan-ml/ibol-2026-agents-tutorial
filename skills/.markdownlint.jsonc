@@ -1,0 +1,5 @@
+// SKILL.md files start with YAML front matter and, by convention, no top-level heading.
+{
+  "extends": "../.markdownlint.jsonc",
+  "MD041": false
+}
