@@ -2,7 +2,7 @@
 
 This kit accompanies my talk "Still feeling around: agents for working scientists" in the workshop "AI for Biodiversity Research: Multimodal Methods for Taxonomic Discovery" at iBOL 2026, Bangkok, on 2026-11-02. It is written for people who use chat assistants such as ChatGPT, Claude or Gemini but have not yet used a coding agent. You can work through it during the question period or afterwards.
 
-Graham Taylor, University of Guelph and Vector Institute
+[Graham Taylor](https://www.gwtaylor.ca), University of Guelph and Vector Institute
 
 If you meet a term you do not know, it is probably in the [glossary](GLOSSARY.md).
 
@@ -12,7 +12,7 @@ If you meet a term you do not know, it is probably in the [glossary](GLOSSARY.md
 
 A chat assistant answers in text, and you copy the answer out and run it yourself. A coding agent uses the same kind of model, but it can act on your computer: it reads the files in a folder you choose, writes and runs scripts, looks at the output, and tries again until the task is done or it needs you. You describe the task in plain English, and you can see each step it takes.
 
-Despite the name, the task need not be programming. I use agents to summarize data, reproduce someone else's analysis, set up accounts on a computing cluster and organize the material for a talk. What makes an agent useful is the folder you give it and your judgement of what it produces. Ask it only for work you can check.
+Despite the name, the task need not be programming. I use agents to summarize data, reproduce someone else's analysis, set up accounts on a computing cluster and organize the material for a talk. What makes an agent useful is the folders you give it and your judgement of what it produces. Ask it only for work you can check.
 
 ## Starting without a terminal
 

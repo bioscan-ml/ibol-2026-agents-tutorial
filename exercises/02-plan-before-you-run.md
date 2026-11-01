@@ -32,20 +32,20 @@ The agent asks its questions in rounds, each with its recommended answer. Answer
 
 ## Step 4: Write the plan to a file
 
-The grill-me skill writes nothing down, so ask for that explicitly when the questions end:
+The grill-me skill writes nothing down, so ask for that explicitly when the questions end. (Matt Pocock's `grill-with-docs` skill, in the same repository, also writes down decisions and a glossary as it questions you, though its documents are aimed at software design.)
 
 ```text
-Write the plan we agreed to plan.md: the question, the data and filters, each step of the analysis, and what each step should produce. Do not run anything yet.
+Write the plan we agreed to plan.md: the question, the data and filters, each step of the analysis, and what each step should produce. Mark any step after which you should stop and show me the result. Do not run anything yet.
 ```
 
 Open `plan.md` in any text editor and change it until it says what you would do yourself. This is the point where your judgement does the most good, because a wrong step is cheapest to fix before anything has run.
 
-## Step 5: Execute, one step at a time
+## Step 5: Execute
 
 ```text
-Read plan.md as I edited it. Carry out step 1 only, then stop and show me the result.
+Read plan.md as I edited it and carry it out. Keep your own task list, and stop only at the checkpoints marked in the plan.
 ```
 
-Check each result before you ask for the next step. If a result is wrong, correct the plan, not only the output, so later steps start from the right place.
+This is how I work: the agent manages the steps and their order, and I check its results at the points I chose, against what the plan says each step should produce. The first time, you may want it to stop after the first step so you can see how it reads your plan. If a result is wrong, correct the plan, not only the output, so later steps start from the right place.
 
 Afterwards, compare `plan.md` with what you would have typed as a single request at the start. The difference is usually what the agent would otherwise have guessed.
